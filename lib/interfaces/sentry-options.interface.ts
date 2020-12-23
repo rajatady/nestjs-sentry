@@ -6,7 +6,8 @@ export interface SentryModuleOptions {
     debug: boolean;
     environment?: string;
     release?: string;
-    logLevel?: LogLevel
+    logLevel?: LogLevel;
+    integrations?: any[];
 }
 
 export interface SentryOptionsFactory {
