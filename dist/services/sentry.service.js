@@ -35,6 +35,9 @@ let SentryService = class SentryService extends common_1.Logger {
         if (!(options && options.dsn)) {
             return;
         }
+        if(!options.integrations) {
+          options.integrations = []
+        }
         Sentry.init({
             dsn: options.dsn,
             debug: options.debug === true ? false : options.debug,
@@ -53,7 +56,8 @@ let SentryService = class SentryService extends common_1.Logger {
                         }
                     })),
                 }),
-                new Sentry.Integrations.OnUnhandledRejection({ mode: 'warn' })
+                new Sentry.Integrations.OnUnhandledRejection({ mode: 'warn' }),
+                ...options.integrations
             ]
         });
     }
