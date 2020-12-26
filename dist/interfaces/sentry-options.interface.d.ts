@@ -6,6 +6,9 @@ export interface SentryModuleOptions {
     environment?: string;
     release?: string;
     logLevel?: LogLevel;
+    integrations?: any[];
+    tracesSampleRate?: number;
+    tracesSampler: any;
 }
 export interface SentryOptionsFactory {
     createSentryModuleOptions(): Promise<SentryModuleOptions> | SentryModuleOptions;
