@@ -44,6 +44,8 @@ let SentryService = class SentryService extends common_1.Logger {
             environment: options.environment,
             release: options.release,
             logLevel: options.logLevel,
+            tracesSampleRate: options.tracesSampleRate,
+            tracesSampler: options.tracesSampler,
             integrations: [
                 new Sentry.Integrations.OnUncaughtException({
                     onFatalError: ((err) => __awaiter(this, void 0, void 0, function* () {
