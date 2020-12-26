@@ -30,6 +30,8 @@ export class SentryService extends Logger {
           environment: options.environment,
           release: options.release,
           logLevel: options.logLevel,
+          tracesSampleRate: options.tracesSampleRate,
+          tracesSampler: options.tracesSampler,
           integrations: [
             new Sentry.Integrations.OnUncaughtException({
               onFatalError: (async (err) => {
